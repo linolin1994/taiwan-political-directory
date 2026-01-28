@@ -122,7 +122,7 @@ export async function fetchLegislators(): Promise<Politician[]> {
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
         },
-        timeout: 10000, // 10 seconds timeout to prevent build hang
+        timeout: 25000, // Increased to 25s to handle slow LY website response
     });
     const $ = cheerio.load(data);
     const legislators: Politician[] = [];
