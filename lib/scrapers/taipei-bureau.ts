@@ -7,9 +7,9 @@ import { Politician } from '@/types';
 // Verified List of Taipei City Bureau Heads (2024-2026 Term)
 const TAIPEI_HEADS_DATA: Politician[] = [
     { id: 'TPE-DEPT-SEC', name: '李泰興', role: 'BUREAU_HEAD', city: '臺北市', party: '無黨籍', title: '秘書長', department: '秘書處', lastUpdated: new Date().toISOString() },
-    { id: 'TPE-DEPT-DEP1', name: '林奕華', role: 'BUREAU_HEAD', city: '臺北市', party: '中國國民黨', title: '副市長', department: '市府', lastUpdated: new Date().toISOString() },
-    { id: 'TPE-DEPT-DEP2', name: '張溫德', role: 'BUREAU_HEAD', city: '臺北市', party: '無黨籍', title: '副市長', department: '市府', lastUpdated: new Date().toISOString() },
-    { id: 'TPE-DEPT-DEP3', name: '林瑞圖', role: 'BUREAU_HEAD', city: '臺北市', party: '無黨籍', title: '副市長', department: '市府', lastUpdated: new Date().toISOString() }, // Note: Deputy Mayors vary
+    { id: 'TPE-DEPT-DEP1', name: '李四川', role: 'BUREAU_HEAD', city: '臺北市', party: '中國國民黨', title: '副市長', department: '市府', lastUpdated: new Date().toISOString() },
+    { id: 'TPE-DEPT-DEP2', name: '林奕華', role: 'BUREAU_HEAD', city: '臺北市', party: '中國國民黨', title: '副市長', department: '市府', lastUpdated: new Date().toISOString() },
+    { id: 'TPE-DEPT-DEP3', name: '張溫德', role: 'BUREAU_HEAD', city: '臺北市', party: '無黨籍', title: '副市長', department: '市府', lastUpdated: new Date().toISOString() },
     
     { id: 'TPE-DEPT-CIVIL', name: '陳永德', role: 'BUREAU_HEAD', city: '臺北市', party: '中國國民黨', title: '民政局長', department: '民政局', lastUpdated: new Date().toISOString() },
     { id: 'TPE-DEPT-FINANCE', name: '胡曉嵐', role: 'BUREAU_HEAD', city: '臺北市', party: '無黨籍', title: '財政局長', department: '財政局', lastUpdated: new Date().toISOString() },
