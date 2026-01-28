@@ -134,7 +134,8 @@ export async function fetchLegislators(): Promise<Politician[]> {
         
         // Name
         const nameEl = $(el).find('.legislatorname');
-        const name = nameEl.text().trim();
+        // Clean name: remove spaces and newlines (e.g. "魯 明 哲" -> "魯明哲")
+        const name = nameEl.text().replace(/\s+/g, '').trim();
         
         // Party (from icon alt text, e.g., "中國國民黨徽章")
         const partyImg = $(el).find('.six-party-icon');
