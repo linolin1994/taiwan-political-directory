@@ -9,6 +9,7 @@ import { fetchTaichungBureauHeads } from '@/lib/scrapers/taichung-bureau';
 import { fetchTainanBureauHeads } from '@/lib/scrapers/tainan-bureau';
 import { fetchKaohsiungBureauHeads } from '@/lib/scrapers/kaohsiung-bureau';
 import { fetchTaipeiCouncilors } from '@/lib/scrapers/taipei-councilors';
+import { fetchNewTaipeiCouncilors } from '@/lib/scrapers/new-taipei-councilors';
 import { Politician } from '@/types';
 
 export const revalidate = 86400;
@@ -25,6 +26,7 @@ export default async function Home() {
     fetchTainanBureauHeads(),
     fetchKaohsiungBureauHeads(),
     fetchTaipeiCouncilors(),
+    fetchNewTaipeiCouncilors(),
   ]);
 
   // Helper to extract data or return empty array on failure
@@ -35,27 +37,29 @@ export default async function Home() {
   };
 
   const [
-    legislators, 
-    mayors, 
-    taipeiHeads, 
-    newTaipeiHeads, 
-    taoyuanHeads, 
-    taichungHeads, 
-    tainanHeads, 
-    kaohsiungHeads, 
-    taipeiCouncilors
+    legislators,
+    mayors,
+    taipeiHeads,
+    newTaipeiHeads,
+    taoyuanHeads,
+    taichungHeads,
+    tainanHeads,
+    kaohsiungHeads,
+    taipeiCouncilors,
+    newTaipeiCouncilors
   ] = results.map(getData);
 
   const allPoliticians = [
-      ...(mayors as Politician[]), 
-      ...(legislators as Politician[]), 
-      ...(taipeiHeads as Politician[]), 
-      ...(newTaipeiHeads as Politician[]), 
-      ...(taoyuanHeads as Politician[]), 
-      ...(taichungHeads as Politician[]), 
-      ...(tainanHeads as Politician[]), 
-      ...(kaohsiungHeads as Politician[]), 
-      ...(taipeiCouncilors as Politician[])
+    ...(mayors as Politician[]),
+    ...(legislators as Politician[]),
+    ...(taipeiHeads as Politician[]),
+    ...(newTaipeiHeads as Politician[]),
+    ...(taoyuanHeads as Politician[]),
+    ...(taichungHeads as Politician[]),
+    ...(tainanHeads as Politician[]),
+    ...(kaohsiungHeads as Politician[]),
+    ...(taipeiCouncilors as Politician[]),
+    ...(newTaipeiCouncilors as Politician[])
   ];
 
   return (
@@ -68,7 +72,7 @@ export default async function Home() {
           收錄 {allPoliticians.length} 位公職人員資料
         </p>
       </div>
-      
+
       <SearchInterface initialData={allPoliticians} />
     </div>
   );
